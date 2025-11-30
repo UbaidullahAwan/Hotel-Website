@@ -1,0 +1,11 @@
+<?php
+// logout.php
+require_once 'config.php';
+
+// Destroy all session data
+$_SESSION = array();
+session_destroy();
+
+// Redirect to homepage
+redirect('index.php');
+?>
