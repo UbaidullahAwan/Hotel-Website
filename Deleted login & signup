@@ -1,0 +1,26 @@
+<div class="nav-actions" id="navActions">
+                <?php if (isset($_SESSION['user_id'])): ?>
+                    <div class="user-menu">
+                        <button class="user-dropdown-btn" id="userDropdownBtn">
+                            <i class="fas fa-user-circle"></i>
+                            <span class="user-name">Hi, <?php echo htmlspecialchars($_SESSION['first_name'] ?? 'User'); ?></span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="dropdown-menu" id="dropdownMenu">
+                            <a href="profile.php" class="dropdown-item">
+                                <i class="fas fa-user"></i> My Profile
+                            </a>
+                           
+                            <div class="dropdown-divider"></div>
+                            <a href="logout.php" class="dropdown-item">
+                                <i class="fas fa-sign-out-alt"></i> Logout
+                            </a>
+                        </div>
+                    </div>
+                <?php else: ?>
+                    <div class="auth-buttons">
+                        <a href="login.php" class="btn btn-outline">Login</a>
+                        <a href="register.php" class="btn btn-primary">Sign Up</a>
+                    </div>
+                <?php endif; ?>
+            </div>
